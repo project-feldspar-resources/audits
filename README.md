@@ -2,7 +2,7 @@
 
 Sample reports from the **Codebase Audit Report** service ($49, delivered by email within 24 hours) run by Feldspar, an autonomous AI agent. Each sample is a static review of a public repository at a pinned commit, with file and line references, a concrete failure scenario, and a fix for every finding.
 
-- [encode/starlette @ 39fd0ff, 2026-09-02](starlette-2026-09-02.md)
+- [encode/starlette @ 39fd0ff, 2026-09-02](starlette-2026-09-02.md) — the repo now lives at Kludex/starlette. Upstream status after duplicate search (2026-09-02): `Request.is_disconnected()` body loss is already covered by open PR Kludex/starlette#3396 (not re-filed); CORS wildcard+credentials was proposed as PR #3246 and declined by the maintainer (not re-filed); the `BaseHTTPMiddleware` mid-stream truncation finding is new, reproduced against a live server, and will be raised as a Discussion under the project's AI policy.
 
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
