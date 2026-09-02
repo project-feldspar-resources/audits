@@ -53,8 +53,8 @@ Defects cluster in four places. Edge-case arithmetic and falsy-zero handling in 
 
 ### [High] 7. `scripts/release.py` bumps npm versions without regenerating the root lockfile
 - Where: `scripts/release.py:70-75`, versus `:99-100` where the PyPI path correctly runs `uv lock`.
-- What happens: there is exactly one npm lockfile (`./package-lock.json`) and it records member versions verbatim — `package-lock.json:3837-3839` pins `src/everything` at `2.0.0`, and `0.6.3`/`0.6.3`/`0.6.2` for the others. They match `src/*/package.json` today by luck, not enforcement. The release job commits the bump and every later run does `npm ci` (`typescript.yml`, both jobs; `release.yml:188`), which hard-fails with `EUSAGE` when the two disagree — so the first automated npm release breaks TypeScript CI on every *unrelated* PR until a human runs `npm install`. Related: `gen_version()` at `:124-127` returns `f"{year}.{month}.{day}"`, so the next release publishes `server-everything@2026.9.2` on top of `2.0.0`, an unannounced switch to CalVer that breaks any `^2.0.0` range.
-- Fix: run `npm install --package-lock-only --workspaces` from the repo root after rewriting `package.json`; add a root `npm ci` guard job. Decide between semver and CalVer and make `gen_version()` match.
+- What happens: there is exactly one npm lockfile (`./package-lock.json`) and it records member versions verbatim — `package-lock.json:3837-3839` pins `src/everything` at `2.0.0`, and `0.6.3`/`0.6.3`/`0.6.2` for the others. They match `src/*/package.json` today by luck, not enforcement. The release job commits the bump and every later run does `npm ci` (`typescript.yml`, both jobs; `release.yml:188`), which hard-fails with `EUSAGE` when the two disagree — so the first automated npm release breaks TypeScript CI on every *unrelated* PR until a human runs `npm install`. Related: `gen_version()` at `:124-127` returns `f"{year}.{month}.{day}"`, so the next release publishes `server-everything@2026.9.2` on top of `2.0.0`, which breaks any `^2.0.0` range. Correction (2026-09-02 16:40Z): the first published version called this "an unannounced switch to CalVer"; `RELEASING.md` documents CalVer as intentional and a semver migration is tracked upstream in issue #4472, so only the lockfile half of this finding stands as new.
+- Fix: run `npm install --package-lock-only --workspaces` from the repo root after rewriting `package.json`; add a root `npm ci` guard job.
 
 ### [Medium] 8. The gzip tool's domain allowlist is bypassable by an HTTP redirect
 - Where: `src/everything/tools/gzip-file-as-resource.ts:148-158` (validation), `:195` (fetch), `:82-88` (sequence).
@@ -124,6 +124,22 @@ Defects cluster in four places. Edge-case arithmetic and falsy-zero handling in 
 - Where: `src/filesystem/index.ts:166-167` (`version: "0.2.0"`) against `src/filesystem/package.json:3` (`"0.6.3"`); also `src/memory/index.ts:282`, `src/everything/server/index.ts:50`.
 - What happens: clients read `serverInfo.version` from the initialize response, so every `mcp-server-filesystem` in the field reports `0.2.0` — feature gating, telemetry and bug reports keyed to a version that has not existed for many releases. Memory's literal matches today, so it is latent. `scripts/release.py` rewrites only the `version` key in `package.json`, so these literals never move. `src/sequentialthinking/version.ts:11-33` already resolves the version from `package.json` at runtime, used at `src/sequentialthinking/index.ts:21`.
 - Fix: hoist `resolvePackageVersion()` into a shared internal module and use it in filesystem, memory and everything. `src/sequentialthinking/__tests__/server-version.test.ts` is the assertion to copy.
+
+## Upstream status (checked 2026-09-02 16:40Z)
+
+Before filing anything I searched the repository's open and closed issues and pull requests. Most of the concrete defects above already have a fix waiting for review, which is itself the most useful thing this report can tell a maintainer:
+
+- Finding 1 (`tailFile` off-by-one): open PRs #4643 and #4674 describe and fix this exact bug. Not filed.
+- Finding 2 (`head`/`tail` zero, negative, fractional): open PR #4178 (`z.number().int().nonnegative()` plus `!== undefined` guards) covers all three cases. Not filed.
+- Finding 3 (`git_show` non-UTF-8): open PR #4532 has the `errors='replace'` fix; I left a comment with a verified repro and the binary-vs-non-UTF-8 clarification.
+- Finding 5 (images run as root): no existing report; filed as issue #4741 (packaging defect, not a vulnerability report, per `SECURITY.md`).
+- Finding 6 (`${LOCAL_TIMEZONE}` literal): open PR #4620 fixes it. Not filed.
+- Finding 7 (release lockfile): the CalVer half is documented in `RELEASING.md` and tracked in #4472 (see the correction in the finding); the lockfile half overlaps with the open release-tooling discussion in #3870 and PRs #3905/#3892/#3969/#3993/#4020. Not filed separately.
+- Finding 10 (`fetch` redirect / robots / SSRF): issue #3741 is the maintainer-designated canonical thread; #4116 and #4143 were closed as duplicates of it. Not filed.
+- Finding 16 (memory intra-call duplicates): open PR #4383 fixes it. Not filed.
+- The rest (4, 8, 9, 11-15, 17-20) were not searched individually and are reported here only.
+
+The repository has no issue templates and no policy on AI-authored contributions; its `CLAUDE.md` is for contributors using Claude Code. Issue triage is active; the visible bottleneck is pull-request review, with several of the PRs above unreviewed for months.
 
 ## Server matrix
 
