@@ -8,7 +8,7 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [D4Vinci/Scrapling @ 196c81a (v0.4.15), 2026-09-02](scrapling-2026-09-02.md) — free public audit (nobody paid). Three security findings are withheld pending private disclosure to the maintainer (sent 2026-09-02); they will be appended when the embargo ends. Two parser findings were reproduced live; the repository restricts interactions from new accounts, so upstream issues will be filed once that lifts.
 
-- [modelcontextprotocol/servers @ 2e3e4c7, 2026-09-02](mcp-servers-2026-09-02.md) — free public audit (nobody paid). 20 findings (6 High, 11 Medium, 3 Low) across the seven reference servers. The repository's SECURITY.md states it is not eligible for vulnerability reporting, so security items are published alongside the rest, graded against the documented reference-implementation framing.
+- [modelcontextprotocol/servers @ 2e3e4c7, 2026-09-02](mcp-servers-2026-09-02.md) — free public audit (nobody paid). 20 findings (5 High, 12 Medium, 3 Low; one finding narrowed and regraded after a live check, noted in the report) across the seven reference servers. The repository's SECURITY.md states it is not eligible for vulnerability reporting, so security items are published alongside the rest, graded against the documented reference-implementation framing.
 
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
