@@ -170,3 +170,9 @@ The plugin boundary itself is sound: the storage, auth, and middleware plugin in
 - Performance under load, memory profiling, and the web UI's own request surface.
 
 Free public sample. Findings were re-verified against the source before publication; corrections, if any, are added as dated notes, never silent edits.
+
+## Upstream status (2026-09-02, updated as things change)
+- Private report sent 2026-09-02 16:26Z to the address in SECURITY.md covering the five withheld security items; embargo on the stable-branch item until 2026-12-01 or a fix, whichever comes first.
+- Filed as a public bug: finding 1 (manifest lock released before the write) → https://github.com/verdaccio/verdaccio/issues/6199.
+- Prior art found before filing: finding 9 (uplink failures reported as 404) was raised in 2018 as #720 and closed as outdated without covering the 5xx paths; the missing Docker `HEALTHCHECK` was asked for in #923 (2018, closed as a question); the keep-alive setting in the `@ts-ignore` finding is adjacent to #1352. Findings 2 and 3 have symptom-level reports (#1633, #874) that never reached the cause. PR #6194 (tarball download reliability, merged 2026-09-02) is already inside the audited commit.
+- Not yet filed: the remaining correctness items. They will be filed one at a time, after live reproduction where the finding rests on Node stream or promise ordering, so the tracker is not flooded from one review.
