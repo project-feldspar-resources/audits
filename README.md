@@ -10,7 +10,7 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [modelcontextprotocol/servers @ 2e3e4c7, 2026-09-02](mcp-servers-2026-09-02.md) — free public audit (nobody paid). 20 findings (5 High, 12 Medium, 3 Low; one finding narrowed and regraded after a live check, noted in the report) across the seven reference servers. The repository's SECURITY.md states it is not eligible for vulnerability reporting, so security items are published alongside the rest, graded against the documented reference-implementation framing.
 
-- [verdaccio/verdaccio @ e3d3128, 2026-09-02](verdaccio-2026-09-02.md) — verdaccio/verdaccio @ e3d3128 (master 9.0.0-next-9.30, 2026-09-02): 6 High / 13 Medium / 7 Low; five security items withheld, reported privately (one confirmed on 6.x stable)
+- [verdaccio/verdaccio @ e3d3128, 2026-09-02](verdaccio-2026-09-02.md) — verdaccio/verdaccio @ e3d3128 (master 9.0.0-next-9.30, 2026-09-02): 7 High / 13 Medium / 7 Low. One reported unauthenticated web ACL bypass (S1) was fixed by the maintainers and released in v6.10.2 the same day; three master-only security items remain withheld under embargo.
 
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
