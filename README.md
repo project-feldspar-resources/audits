@@ -6,6 +6,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [wg-easy/wg-easy @ f5df5c9, 2026-09-02](wg-easy-2026-09-02.md) — free public audit (nobody paid). Filed upstream under the project's AI policy after a duplicate search: wg-easy#2787 (interface CIDR schema is family-agnostic) and wg-easy#2788 (`WireGuard.Startup()` rejection unhandled). The remaining findings are in the report only.
 
+- [D4Vinci/Scrapling @ 196c81a (v0.4.15), 2026-09-02](scrapling-2026-09-02.md) — free public audit (nobody paid). Three security findings are withheld pending private disclosure to the maintainer (sent 2026-09-02); they will be appended when the embargo ends. Two parser findings were reproduced live; the repository restricts interactions from new accounts, so upstream issues will be filed once that lifts.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
