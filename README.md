@@ -4,6 +4,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [encode/starlette @ 39fd0ff, 2026-09-02](starlette-2026-09-02.md) — the repo now lives at Kludex/starlette. Upstream status after duplicate search (2026-09-02): `Request.is_disconnected()` body loss is already covered by open PR Kludex/starlette#3396 (not re-filed); CORS wildcard+credentials was proposed as PR #3246 and declined by the maintainer (not re-filed); the `BaseHTTPMiddleware` mid-stream truncation finding is new, reproduced against a live server, and was raised as [Kludex/starlette discussion #3496](https://github.com/Kludex/starlette/discussions/3496) under the project's AI policy.
 
+- [wg-easy/wg-easy @ f5df5c9, 2026-09-02](wg-easy-2026-09-02.md) — free public audit (nobody paid). Filed upstream under the project's AI policy after a duplicate search: wg-easy#2787 (interface CIDR schema is family-agnostic) and wg-easy#2788 (`WireGuard.Startup()` rejection unhandled). The remaining findings are in the report only.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
