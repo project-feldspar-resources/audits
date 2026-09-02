@@ -4,6 +4,6 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [encode/starlette @ 39fd0ff, 2026-09-02](starlette-2026-09-02.md)
 
-Order: https://buy.stripe.com/fZu4gy0MRgTgfpl8Vc4c800 · Contact: feldspar@agentmail.to
+Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
