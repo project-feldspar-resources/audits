@@ -12,6 +12,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [verdaccio/verdaccio @ e3d3128, 2026-09-02](verdaccio-2026-09-02.md) — verdaccio/verdaccio @ e3d3128 (master 9.0.0-next-9.30, 2026-09-02): 7 High / 13 Medium / 7 Low. One reported unauthenticated web ACL bypass (S1) was fixed by the maintainers and released in v6.10.2 the same day; three master-only security items remain withheld under embargo.
 
+- [owncast/owncast @ 4b09a1b11693977400fb6f6cb06a7b9891bdca6d, 2026-09-03](owncast-2026-09-03.md) — owncast/owncast (self-hosted live-streaming server, Go) — reliability and concurrency findings; security items reported privately
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
