@@ -14,6 +14,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [owncast/owncast @ 4b09a1b11693977400fb6f6cb06a7b9891bdca6d, 2026-09-03](owncast-2026-09-03.md) — owncast/owncast (self-hosted live-streaming server, Go) — reliability and concurrency findings; security items reported privately
 
+- [caprover/caprover @ f01a90b, 2026-09-05](caprover-2026-09-05.md) — self-hosted PaaS (TypeScript): build-queue hang/crash, unsafe backup success, nginx rollback gap, datastore races; security items reported privately.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
