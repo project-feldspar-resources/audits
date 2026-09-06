@@ -22,6 +22,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [hatchet-dev/hatchet @ 086a63f, 2026-09-06](hatchet-2026-09-06.md) — task orchestration engine (Go, static review): shutdown-path nil panic, a buffer publish that blocks forever after Stop(), Background() contexts that discard shutdown cancellation, unbounded scheduler goroutines; security items reported privately
 
+- [crowdsecurity/crowdsec @ 909b515, 2026-09-06](crowdsec-2026-09-06.md) — Collaborative IDS/IPS engine (Go): race-prone bucket RNG, double-tail half-threshold bans, silent uniq-bucket failure, acquisition teardown on one bad line.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
