@@ -26,6 +26,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [casdoor/casdoor @ aec15f8, 2026-09-06](casdoor-2026-09-06.md) — Identity & access platform (Go): send-under-lock deadlocks all LDAP admin ops, zero-timeout outbound HTTP on pre-auth paths, rename cascade without the row rename, IdP response-body leaks.
 
+- [unkeyed/unkey @ 60c213a, 2026-09-06](unkey-2026-09-06.md) — API-key management platform (Go): SWR-cache deadlock + in-flight-map leak, unenforced shutdown timeout, uncapped rate-limiter maps (OOM), timeout-less inter-service clients; no Go CI/-race. Crypto core sound.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
