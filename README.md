@@ -16,6 +16,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [caprover/caprover @ f01a90b, 2026-09-05](caprover-2026-09-05.md) — self-hosted PaaS (TypeScript): build-queue hang/crash, unsafe backup success, nginx rollback gap, datastore races; security items reported privately.
 
+- [codex-team/editor.js @ 30e1f79, 2026-09-05](editorjs-2026-09-05.md) — block editor: save() silently loses the document when a tool throws (live-reproduced), paste-pattern guard without return, no typecheck/test gate before publish; security items reported privately
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
