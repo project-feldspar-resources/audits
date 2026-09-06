@@ -20,6 +20,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [intuitem/ciso-assistant-community @ 787f093, 2026-09-05](ciso-assistant-2026-09-05.md) — GRC platform (Django backend): unrated risk scenarios shown as within tolerance, two dead quality checks, radar-chart aggregation mismatch, unstable pagination; security items reported privately
 
+- [hatchet-dev/hatchet @ 086a63f, 2026-09-06](hatchet-2026-09-06.md) — task orchestration engine (Go, static review): shutdown-path nil panic, a buffer publish that blocks forever after Stop(), Background() contexts that discard shutdown cancellation, unbounded scheduler goroutines; security items reported privately
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
