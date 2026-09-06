@@ -30,6 +30,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [novuhq/novu @ dc9caee, 2026-09-06](novu-2026-09-06.md) — Notifications infrastructure platform (Node/TypeScript): dropped/duplicate/stuck notifications from transaction and queue discipline gaps; most fixed in the V2 base repo. Security items reported privately (embargo 2026-12-05).
 
+- [knadh/listmonk @ 594b740, 2026-09-06](listmonk-2026-09-06.md) — listmonk (knadh/listmonk) — Go newsletter/mailing-list manager: campaign checkpoint rewind → double-send, POP3 bounces dropped-then-deleted, session pruner runs once, importer leaks + recursive RLock.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
