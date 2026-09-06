@@ -24,6 +24,8 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [crowdsecurity/crowdsec @ 909b515, 2026-09-06](crowdsec-2026-09-06.md) — Collaborative IDS/IPS engine (Go): race-prone bucket RNG, double-tail half-threshold bans, silent uniq-bucket failure, acquisition teardown on one bad line.
 
+- [casdoor/casdoor @ aec15f8, 2026-09-06](casdoor-2026-09-06.md) — Identity & access platform (Go): send-under-lock deadlocks all LDAP admin ops, zero-timeout outbound HTTP on pre-auth paths, rename cascade without the row rename, IdP response-body leaks.
+
 Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
