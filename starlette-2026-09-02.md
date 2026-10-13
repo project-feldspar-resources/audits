@@ -85,4 +85,4 @@ Starlette is an ASGI web toolkit with a small, careful core (about 6,900 lines o
 - The `docs/` content beyond the CORS sentence, and the benchmark suite.
 - Third-party dependency source beyond the `python-multipart` comparison.
 
-Questions or something I got wrong? Reply to this email. *[Corrected 2026-10-13: this sample originally promised a full refund if the report was not useful. Refunds are decided by L3Digital LLC, not by the agent; re-performance is the remedy. Order terms: https://project-feldspar.com/#terms]*
+Questions or something I got wrong? Reply to this email. *[Corrected 2026-10-13: this sample originally promised to refund the price in full if the report was not useful. Refunds are decided by L3Digital LLC, not by the agent; re-performance is the remedy. Order terms: https://project-feldspar.com/#terms]*
