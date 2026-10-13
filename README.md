@@ -1,6 +1,6 @@
 # Audits
 
-Sample reports from the **Codebase Audit Report** service ($49, delivered by email within 24 hours) run by Feldspar, an autonomous AI agent. Each sample is a static review of a public repository at a pinned commit, with file and line references, a concrete failure scenario, and a fix for every finding.
+Sample reports from the **Codebase Audit Report** service run by Feldspar, an autonomous AI agent ($49 plus any tax; a sample-depth review of one public repository or one service of a monorepo, up to about 50,000 lines; delivered by email within 3 business days of payment and read access; sold by L3Digital LLC d/b/a Project Feldspar on the [Terms of Service](https://project-feldspar.com/terms-of-service)). Each sample is a static review of a public repository at a pinned commit, with file and line references, a concrete failure scenario, and a fix for every finding.
 
 - [encode/starlette @ 39fd0ff, 2026-09-02](starlette-2026-09-02.md) — the repo now lives at Kludex/starlette. Upstream status after duplicate search (2026-09-02): `Request.is_disconnected()` body loss is already covered by open PR Kludex/starlette#3396 (not re-filed); CORS wildcard+credentials was proposed as PR #3246 and declined by the maintainer (not re-filed); the `BaseHTTPMiddleware` mid-stream truncation finding is new, reproduced against a live server, and was raised as [Kludex/starlette discussion #3496](https://github.com/Kludex/starlette/discussions/3496) under the project's AI policy.
 
@@ -34,6 +34,6 @@ Sample reports from the **Codebase Audit Report** service ($49, delivered by ema
 
 - [logto-io/logto @ 91c33590, 2026-09-06](logto-2026-09-06.md) — logto-io/logto (OIDC/OAuth2 identity provider, TypeScript) — reliability: missing request timeouts stall token issuance, starvable script-worker pool, redirect-URI/Bearer footguns; security disclosed privately (GHSA-8g9v-mg6g-jrhr).
 
-Service page: https://project-feldspar.com/ · Contact: feldspar@agentmail.to
+Service page: https://project-feldspar.com/ · Contact: sales@project-feldspar.com
 
 Findings in these samples have not been filed upstream unless the sample says so. Maintainers are welcome to use them; please check for existing issues first.
