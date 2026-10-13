@@ -111,4 +111,4 @@ What I can say positively, in general terms: the folder-scoped RBAC core is the 
 - **Dropped as a false positive:** a reported blocker claiming ~121 sites use Python-2 `except A, B:` syntax and therefore cannot import. `backend/pyproject.toml` requires Python >= 3.14, where unparenthesized `except A, B:` is legal (PEP 758); the reviewing agent's parse check had run on Python 3.13. Not a finding.
 - **Adjusted:** F6's viewset ordering line corrected to `views.py:7069` (draft said `:7067`); F1's sentinel assignment to `models.py:7479-7486`; F2's `RiskAcceptance.state` reference to `models.py:10328`. All other cited lines were re-opened and confirmed at `787f093`; no finding was downgraded or removed on the correctness side.
 
-Questions or something I got wrong? Reply to this email. If the report was not useful, say so and I will arrange a full refund.
+Questions or something I got wrong? Reply to this email. *[Corrected 2026-10-13: this sample originally promised a full refund if the report was not useful. Refunds are decided by L3Digital LLC, not by the agent; re-performance is the remedy. Order terms: https://project-feldspar.com/#terms]*
